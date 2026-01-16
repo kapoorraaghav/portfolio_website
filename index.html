@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="navbar">
+  <div class="nav-container">
+
+    <div class="nav-logo">
+      Raaghav Kapoor
+    </div>
+
+    <nav class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+
+  <main class="container">
+
+    <!-- HERO -->
+    <h1 class="headline">
+      An engineering student who <br/>loves to code
+    </h1>
+
+    <!-- FEATURED -->
+    <section class="featured">
+      <a href="https://github.com/kapoorraaghav/end2end-jet-learning-resnet15"target="_blank" >
+      <img src="images/feature.png" alt="Feature work" class="parallax-img">
+      <p class="caption">Jet Classification</p>
+      </a>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects" id="projects">
+      <div class="project">
+        <a href="https://github.com/kapoorraaghav/leaf-disease-classifier"target="_blank">
+        <img src="images/project1.png" alt="">
+        <p>Leaf Disease Detector</p>
+        </a>
+      </div>
+
+      <div class="project">
+        <a href="https://github.com/kapoorraaghav/portfolio_website"target="_blank">
+        <img src="images/project2.png" alt="">
+        <p>Portfolio Website</p>
+        </a>
+      </div>
+
+      <div class="project">
+        <a href="https://github.com/kapoorraaghav/TensorFlow/blob/main/Dog_and_Cat_Classifier.ipynb"target="_blank">
+        <img src="images/project3.png" alt="">
+        <p>Cats & Dogs Classifier</p>
+        </a>
+      </div>
+
+      <div class="project">
+        <a href="https://github.com/kapoorraaghav/review_classification"target="_blank">
+        <img src="images/project4.png" alt="">
+        <p>Movie Sentiment Classifier</p>
+      </a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id = "about">
+      <div class="about-container">
+
+        <div class="about-text">
+          <h2>About Me</h2>
+
+          <p>
+            I’m <strong>Raaghav Kapoor</strong>, a B.Tech student passionate about
+            <strong>AI, Machine Learning</strong>, and modern software development.
+          </p>
+
+          <p>
+            I enjoy building intelligent, real-world solutions—especially in
+            <strong>computer vision</strong> and <strong>deep learning</strong>—
+            with a focus on clean design, scalability, and impact.
+          </p>
+
+          <p>
+            I’m driven by curiosity, continuous learning, and the goal of turning
+            ideas into polished, practical products.
+          </p>
+        </div>
+
+        <div class="about-image">
+          <img src="images/about.png" alt="Raaghav Kapoor">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills" id = "skills">
+      <h2 class="skills-title">My Skills</h2>
+
+      <div class="skill-item">
+        <button class="skill-header">
+          <span>Machine Learning</span>
+          <span class="arrow">↑</span>
+        </button>
+        <div class="skill-content">
+          <p>Pandas</p>
+          <p>Numpy</p>
+          <p>TensorFlow</p>
+          <p>Scikit-learn</p>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <button class="skill-header">
+          <span>Web Development</span>
+          <span class="arrow">↓</span>
+        </button>
+        <div class="skill-content">
+          <p>HTML</p>
+          <p>CSS</p>
+          <p>JavaScript</p>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <button class="skill-header">
+          <span>Coding Languages</span>
+          <span class="arrow">↓</span>
+        </button>
+        <div class="skill-content">
+          <p>Python</p>
+          <p>C++</p>
+          <p>Java</p>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <button class="skill-header">
+          <span>Other Skills</span>
+          <span class="arrow">↓</span>
+        </button>
+        <div class="skill-content">
+          <p>Git & GitHub</p>
+          <p>Linux</p>
+          <p>Model Evaluation</p>
+        </div>
+      </div>
+    </section>
+
+  <section class="contact section" id = "contact">
+  <div class="contact-container">
+
+    <div class="contact-left">
+      <span class="contact-label">Contact</span>
+      <h2 class="contact-heading">
+        Let’s start<br>
+        creating together
+      </h2>
+    </div>
+
+    <div class="contact-right">
+      <a href="https://x.com/kapoorraaghav22" class="contact-link" target="_blank">Twitter <span>↗</span></a>
+      <a href="https://www.linkedin.com/in/raaghav-kapoor-a0804b377/" class="contact-link" target="_blank">LinkedIn <span>↗</span></a>
+      <a href="https://github.com/kapoorraaghav" class="contact-link" target="_blank">GitHub <span>↗</span></a>
+    </div>
+
+  </div>
+</section>
+
+  </main>
+
+  <!-- SKILLS ACCORDION SCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const headers = document.querySelectorAll(".skill-header");
+
+      headers.forEach(header => {
+        header.addEventListener("click", () => {
+          const content = header.nextElementSibling;
+          const arrow = header.querySelector(".arrow");
+          const isOpen = content.classList.contains("open");
+
+          // Close all
+          document.querySelectorAll(".skill-content").forEach(c => {
+            c.classList.remove("open");
+          });
+
+          document.querySelectorAll(".arrow").forEach(a => {
+            a.textContent = "↓";
+          });
+
+          // Open clicked
+          if (!isOpen) {
+            content.classList.add("open");
+            arrow.textContent = "↑";
+          }
+        });
+      });
+    });
+  
+  </script>
+  
+</body>
+</html>
