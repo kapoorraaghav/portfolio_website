@@ -1,9 +1,4 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  background: #000;   /* <-- THIS KILLS THE CREAM */
-  overflow-x: hidden;
-}
+
 a { text-decoration: none; }   
 
 * {
@@ -17,11 +12,13 @@ a { text-decoration: none; }
    Base
 */
 body {
+  margin: 0;
+  padding: 0;
   background: #efe4d8;
   color: #111;
   line-height: 1.5;
+  overflow-x: hidden;
 }
-
 img {
   display: block;
   max-width: 100%;
@@ -441,9 +438,12 @@ img {
   left: 0;
   width: 100%;
   z-index: 1000;
+  background-color: #000;
+  transition: transform 0.3s ease;
+}
 
-  background: rgba(0, 0, 0,5);
-  backdrop-filter: blur(8px);
+.navbar.hide {
+  transform: translateY(-100%);
 }
 
 .nav-container {
